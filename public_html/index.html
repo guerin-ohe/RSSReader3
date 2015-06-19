@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RSS Reader App</title>
+        <meta name=viewport content="user-scalable=no,width=device-width" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+        <script src="main.js"></script>
+    </head>
+    <body>
+        
+        <!-- main page, add feed + feed list -->
+        <div data-role="page" id="intropage">
+            <div data-role="header">
+                <h1>RSS Reader Application</h1>
+            </div>
+            <div data-role="content" id="introContent">
+                <p id="introContentNoFeeds" style="display:none">
+                    Welcome to the RSS Reader Application. You do not
+                    currently have any RSS Feeds. Please use the "Add Feed"
+                    button below to begin.
+                </p>
+                <ul id="feedList" data-role="listview" data-inset="true"></ul>
+                <a href="#addfeedpage" data-role="button" data-theme="b">Add Feed</a>
+            </div>
+            <div data-role="footer">
+                <h4>Created with jQuery Mobile</h4>
+            </div>
+        </div>
+        
+        <!-- feed page -->
+        <div data-role="page" id="feedpage" data-add-back-btn="true">
+            <div data-role="header">
+                <h1>Feed Page</h1>
+            </div>
+            <div data-role="content">
+                <div id="feedcontents"></div>
+                <a href="#intropage" data-role="button" data-theme="b">Cancel</a>
+            </div>
+            <div data-role="footer">
+                <h4>Created with jQuery Mobile</h4>
+            </div>
+        </div>
+        
+        <div data-role="page" id="addfeedpage" data-add-back-btn="true">
+            <div data-role="header">
+                <h1>Add Feed</h1>
+            </div>
+            <div data-role="content">
+                <form id="addFeedForm">
+                    <div data-role="fieldcontain">
+                        <label for="feedname">Feed Name:</label>
+                        <input type="text" id="feedname" value="" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="feedurl">Feed URL:</label>
+                        <input type="text" id="feedurl" value="" />
+                    </div>
+                    <a href="#intropage" data-role="button" data-theme="b" onclick="onAddFeedClick()">Add Feed</a>
+                    <a href="#intropage" data-role="button" data-theme="b">Cancel</a>
+                </form> 
+            </div>
+            <div data-role="footer">
+                <h4>Created with jQuery Mobile</h4>
+            </div>
+        </div>
+        
+        <div data-role="page" id="entrypage" data-add-back-btn="true">
+            <div data-role="header">
+                <h1>Entry Page</h1>
+            </div>
+            <div data-role="content">
+                <div id="entrycontents"></div>
+                <a href="" id="entrylink" data-role="button">Visit Entry</a>
+                <a href="#feedpage" data-role="button" data-theme="b">Cancel</a>
+            </div>
+            <div data-role="footer">
+                <h4>Created with jQuery Mobile</h4>
+            </div>
+        </div>
+            
+        <script>
+            $(document).on("pagecreate", "#intropage", init);
+        </script>
+    </body>
+</html>

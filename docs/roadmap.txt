@@ -1,0 +1,21 @@
+ROADMAP:
+========
+
+phase 1 : DEBUGGING et mise en forme
+------------------------------------
+**1/ passer en JQM 1.4
+>>2/ corriger pb boutton delete
+**3/ corriger pb de navigation sur détail d'une info
+4/ corriger pb de gestion d'erreur sur creation
+**5/ remplacer le PageCreate par ready
+**6/ externaliser les fonctions
+7/ regrouper l'ensemble des écrans dans l'écran principale
+8/ remplacer les paramétres de query string par des parametres data de jquery
+9/ mise en place du pattern app.js
+
+phase 2 : intégration CORDOVA
+-----------------------------
+
+phase 3 : extension
+-------------------
+
